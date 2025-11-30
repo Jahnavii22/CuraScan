@@ -11,7 +11,6 @@ const router = express.Router();
 
 console.log("✅ authRoutes module loaded");
 
-// ========================== REGISTER ==========================
 router.post("/register", async (req, res) => {
   console.log("[auth] POST /register body:", req.body);
 
