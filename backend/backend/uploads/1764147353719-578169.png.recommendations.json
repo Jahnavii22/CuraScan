@@ -1,0 +1,27 @@
+{
+  "overall_risk": "moderate",
+  "suggestions": [
+    "Discuss with your doctor to investigate the cause of your elevated MCH, potentially including vitamin B12 or folate levels.",
+    "Consult your physician promptly to evaluate kidney function and hydration status given the high Urea level.",
+    "Ensure adequate fluid intake unless advised otherwise by your doctor.",
+    "Schedule an appointment with your doctor to investigate the cause of your low Hematocrit and potential anemia.",
+    "Your doctor may recommend further tests to determine the type and cause of anemia."
+  ],
+  "specialist_referrals": [
+    {
+      "test": "MCH",
+      "specialist": "Hematologist",
+      "urgency": "Routine"
+    },
+    {
+      "test": "Urea",
+      "specialist": "Nephrologist",
+      "urgency": "Urgent"
+    },
+    {
+      "test": "Hematocrit",
+      "specialist": "Hematologist",
+      "urgency": "Urgent"
+    }
+  ]
+}

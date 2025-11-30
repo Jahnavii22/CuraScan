@@ -1,0 +1,24 @@
+{
+  "overall_risk": "high",
+  "suggestions": [
+    "Consult your physician to investigate the cause of your low platelet count.",
+    "Report any unusual bleeding or bruising to your doctor immediately.",
+    "Seek urgent consultation with a hematologist to interpret the complex and contradictory red blood cell findings (low RBC, low MCV, high Hemoglobin, high MCHC).",
+    "Repeat a complete blood count (CBC) to verify results and rule out potential technical issues or sample artifacts.",
+    "Further specific tests (e.g., iron studies, peripheral blood smear) will likely be needed to clarify the underlying diagnosis for the red blood cell abnormalities.",
+    "Discuss with your doctor about dietary changes, such as reducing intake of sugars and unhealthy fats, to help manage triglyceride levels.",
+    "Incorporate regular physical activity into your routine to support healthy lipid levels."
+  ],
+  "specialist_referrals": [
+    {
+      "test": "Red Blood Cell Indices & Platelets",
+      "specialist": "Hematologist",
+      "urgency": "Urgent"
+    },
+    {
+      "test": "Triglycerides",
+      "specialist": "Cardiologist",
+      "urgency": "Routine"
+    }
+  ]
+}

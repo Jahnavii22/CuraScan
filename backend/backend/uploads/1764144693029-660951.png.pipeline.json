@@ -1,0 +1,189 @@
+{
+  "sex": "Female",
+  "tests": [
+    {
+      "name": "Glucose Fasting",
+      "value": 81.86,
+      "unit": "mg/dL",
+      "status": "no_reference",
+      "reference_lower": null,
+      "reference_upper": null,
+      "specialist": "Endocrinologist",
+      "advice": [
+        "Reduce sugar intake, check HbA1c."
+      ]
+    },
+    {
+      "name": "Hematocrit",
+      "value": 50.55,
+      "unit": "%",
+      "status": "normal",
+      "reference_lower": 40,
+      "reference_upper": 54,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Creatinine",
+      "value": 1.14,
+      "unit": "mg/dL",
+      "status": "normal",
+      "reference_lower": 0.7,
+      "reference_upper": 1.3,
+      "specialist": "Nephrologist",
+      "advice": [
+        "Check kidney function, stay hydrated."
+      ]
+    },
+    {
+      "name": "Platelets",
+      "value": 132.71,
+      "unit": "10^3/uL",
+      "status": "no_reference",
+      "reference_lower": null,
+      "reference_upper": null,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "MCV",
+      "value": 79.89,
+      "unit": "fL",
+      "status": "low",
+      "reference_lower": 80,
+      "reference_upper": 100,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Triglycerides",
+      "value": 168.21,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 0,
+      "reference_upper": 150,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "WBC",
+      "value": 8.1,
+      "unit": "10^3/uL",
+      "status": "normal",
+      "reference_lower": 4,
+      "reference_upper": 11,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "MCHC",
+      "value": 41.94,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 32,
+      "reference_upper": 36,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hemoglobin",
+      "value": 17.94,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 13,
+      "reference_upper": 17,
+      "specialist": "Physician",
+      "advice": [
+        "Increase iron intake if low."
+      ]
+    },
+    {
+      "name": "RBC",
+      "value": 3.42,
+      "unit": "10^6/uL",
+      "status": "low",
+      "reference_lower": 4.5,
+      "reference_upper": 5.9,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "name": "MCV",
+      "value": 79.89,
+      "unit": "fL",
+      "status": "low",
+      "reference_lower": 80,
+      "reference_upper": 100,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Triglycerides",
+      "value": 168.21,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 0,
+      "reference_upper": 150,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "MCHC",
+      "value": 41.94,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 32,
+      "reference_upper": 36,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hemoglobin",
+      "value": 17.94,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 13,
+      "reference_upper": 17,
+      "specialist": "Physician",
+      "advice": [
+        "Increase iron intake if low."
+      ]
+    },
+    {
+      "name": "RBC",
+      "value": 3.42,
+      "unit": "10^6/uL",
+      "status": "low",
+      "reference_lower": 4.5,
+      "reference_upper": 5.9,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    }
+  ],
+  "raw_output": "```json\n{\n  \"sex\": \"Female\",\n  \"tests\": [\n    {\n      \"name\": \"Glucose Fasting\",\n      \"value\": 81.86,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Glucose Fasting (mg/dL)\"\n    },\n    {\n      \"name\": \"Hematocrit\",\n      \"value\": 50.55,\n      \"unit\": \"%\",\n      \"raw_text\": \"Hematocrit (%)\"\n    },\n    {\n      \"name\": \"Creatinine\",\n      \"value\": 1.14,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Creatinine (mg/dL)\"\n    },\n    {\n      \"name\": \"Platelets\",\n      \"value\": 132.71,\n      \"unit\": \"10^3/uL\",\n      \"raw_text\": \"Platelets (10^3/uL)\"\n    },\n    {\n      \"name\": \"MCV\",\n      \"value\": 79.89,\n      \"unit\": \"fL\",\n      \"raw_text\": \"MCV (fL)\"\n    },\n    {\n      \"name\": \"Triglycerides\",\n      \"value\": 168.21,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Triglycerides (mg/dL)\"\n    },\n    {\n      \"name\": \"WBC\",\n      \"value\": 8.1,\n      \"unit\": \"10^3/uL\",\n      \"raw_text\": \"WBC (10^3/uL)\"\n    },\n    {\n      \"name\": \"MCHC\",\n      \"value\": 41.94,\n      \"unit\": \"g/dL\",\n      \"raw_text\": \"MCHC (g/dL)\"\n    },\n    {\n      \"name\": \"Hemoglobin\",\n      \"value\": 17.94,\n      \"unit\": \"g/dL\",\n      \"raw_text\": \"Hemoglobin (g/dL)\"\n    },\n    {\n      \"name\": \"RBC\",\n      \"value\": 3.42,\n      \"unit\": \"10^6/uL\",\n      \"raw_text\": \"RBC (10^6/uL)\"\n    }\n  ],\n  \"notes\": null\n}\n```",
+  "summary": "WARNING: 5 abnormal value(s) detected."
+}
