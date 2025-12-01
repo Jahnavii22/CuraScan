@@ -1,0 +1,199 @@
+wait before me adding the backend/routes/process.js, i have parse_extracted.py is under backend/ml/parse_extractor: #!/usr/bin/envpython3 
+# backend/ml/parse_extracted.py
+import re, json, sys, os
+from typing import List, Dict
+
+# global pattern finds: <test name> (optional unit) <value> <lower> - <upper>
+# We'll do a global findall across the entire extracted_text string.
+PATTERN = re.compile(
+    r'([A-Za-z][A-Za-z0-9 %\(\)\./\+\-]{1,80}?)'   # test name (len limit to avoid runaway)
+    r'(?:\s*\([^\)]*\))?'                           # optional unit in parentheses
+    r'\s+'                                          # separator
+    r'([0-9]+(?:\.[0-9]+)?)'                        # value
+    r'\s+'                                          # separator
+    r'([0-9]+(?:\.[0-9]+)?)\s*[-–]\s*([0-9]+(?:\.[0-9]+)?)' # lower - upper
+)
+
+def parse_text_to_items(text: str) -> List[Dict]:
+    items = []
+    if not text or not text.strip():
+        return items
+
+    # Normalize line breaks to single spaces so multi-line rows still match
+    normalized = text.replace('\r', ' ').replace('\n', ' ')
+    # Run global findall
+    matches = PATTERN.findall(normalized)
+
+    for m in matches:
+        test_raw, value_s, lower_s, upper_s = m
+        test = ' '.join(test_raw.split()).strip()
+        try:
+            value = float(value_s)
+            lower = float(lower_s)
+            upper = float(upper_s)
+            items.append({
+                "test": test,
+                "value": value,
+                "ref_lower": lower,
+                "ref_upper": upper
+            })
+        except Exception:
+            continue
+
+    # Deduplicate by (test, value, ref_lower, ref_upper) preserving order
+    seen = set()
+    dedup = []
+    for it in items:
+        key = (it["test"].lower(), it["value"], it["ref_lower"], it["ref_upper"])
+        if key not in seen:
+            seen.add(key)
+            dedup.append(it)
+    return dedup
+
+def load_input(fp: str):
+    if fp == '-' or not fp:
+        raw = sys.stdin.read()
+        if not raw.strip():
+            raise SystemExit("no stdin input")
+        return json.loads(raw)
+    with open(fp, 'r', encoding='utf-8-sig') as f:
+        return json.load(f)
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: parse_extracted.py <extracted_json_path|-> [out_items.json]")
+        sys.exit(2)
+    inpath = sys.argv[1]
+    outpath = sys.argv[2] if len(sys.argv) > 2 else None
+
+    data = load_input(inpath)
+    # accept dict with extracted_text or just a string
+    if isinstance(data, dict):
+        text = data.get("extracted_text") or data.get("extractedText") or data.get("extracted") or ""
+    elif isinstance(data, str):
+        text = data
+    else:
+        text = ""
+
+    items = parse_text_to_items(text)
+
+    out = {"items": items}
+    if outpath:
+        with open(outpath, "w", encoding="utf-8") as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print(f"Saved {len(items)} items to {outpath}")
+    else:
+        print(json.dumps(out, ensure_ascii=False))
+
+if __name__ == "__main__":
+    main() and backend/utils/runExtractedText.js:// backend/utils/parseExtractedText.js
+export function parseExtractedValues(text) {
+  if (!text) return [];
+
+  // normalize
+  const s = text.replace(/\r\n/g, "\n").replace(/\u00A0/g, " ");
+
+  // Common tests - you can add more exact names and regex patterns.
+  const tests = [
+    { key: "Hemoglobin", names: ["Hemoglobin", "Hemoglobin \\(g/dL\\)"] },
+    { key: "RBC", names: ["RBC", "RBC \\(10\\^6/µL\\)"] },
+    { key: "WBC", names: ["WBC"] },
+    { key: "Platelets", names: ["Platelets"] },
+    { key: "Hematocrit", names: ["Hematocrit"] },
+    { key: "MCV", names: ["MCV"] },
+    { key: "MCH", names: ["MCH"] },
+    { key: "MCHC", names: ["MCHC"] },
+    { key: "Neutrophils", names: ["Neutrophils"] },
+    { key: "Lymphocytes", names: ["Lymphocytes"] },
+    { key: "Fasting Glucose", names: ["Fasting Glucose"] },
+    { key: "Urea", names: ["Urea"] },
+    { key: "Creatinine", names: ["Creatinine"] },
+    { key: "Sodium", names: ["Sodium"] },
+    { key: "Potassium", names: ["Potassium"] },
+    { key: "ALT", names: ["ALT"] },
+    { key: "AST", names: ["AST"] },
+  ];
+
+  const lines = s.split(/\n+/).map(l => l.trim()).filter(Boolean);
+
+  const found = [];
+
+  // pattern: look for a line containing a test name and one or more numbers; also detect range a-b
+  for (const l of lines) {
+    for (const t of tests) {
+      for (const nm of t.names) {
+        const re = new RegExp(`${nm}`, "i");
+        if (re.test(l)) {
+          // capture numbers
+          const nums = Array.from(l.matchAll(/([0-9]+(?:\.[0-9]+)?)/g), m => parseFloat(m[1]));
+          // capture range pattern like "12.0 - 16.0"
+          const rangeMatch = l.match(/([0-9]+(?:\.[0-9]+)?)\s*[-–]\s*([0-9]+(?:\.[0-9]+)?)/);
+          let refLower = null, refUpper = null;
+          if (rangeMatch) {
+            refLower = parseFloat(rangeMatch[1]);
+            refUpper = parseFloat(rangeMatch[2]);
+          }
+
+          // heuristics which number is the measured value: often first numeric after name
+          let value = null;
+          if (nums.length > 0) value = nums[0];
+
+          found.push({
+            test: t.key,
+            line: l,
+            value,
+            ref_lower: refLower,
+            ref_upper: refUpper
+          });
+          break;
+        }
+      }
+    }
+  }
+
+  // Deduplicate by test name (keep first)
+  const dedup = [];
+  const seen = new Set();
+  for (const f of found) {
+    if (!seen.has(f.test)) {
+      dedup.push(f);
+      seen.add(f.test);
+    }
+  }
+  return dedup;
+} backend/utils/runExtractor.js:// backend/utils/runExtractor.js
+import { spawn } from "child_process";
+import fs from "fs";
+import path from "path";
+
+export function runExtractor(pythonPath, scriptPath, filePath) {
+  return new Promise((resolve, reject) => {
+    const absScript = path.resolve(scriptPath);
+    const absFile = path.resolve(filePath);
+
+    // run python script with file arg; script writes <basename>_extracted.json next to cwd
+    const py = spawn(pythonPath, [absScript, absFile]);
+
+    let stdout = "";
+    let stderr = "";
+
+    py.stdout.on("data", d => { stdout += d.toString(); });
+    py.stderr.on("data", d => { stderr += d.toString(); });
+
+    py.on("close", code => {
+      if (code !== 0) return reject(new Error(stderr || `Exit ${code}`));
+
+      const outName = path.basename(filePath, path.extname(filePath)) + "_extracted.json";
+      const outPath = path.resolve(outName);
+      if (!fs.existsSync(outPath)) return reject(new Error("Extractor output missing: " + outPath));
+
+      try {
+        const json = JSON.parse(fs.readFileSync(outPath, "utf8"));
+        // optionally delete the JSON temp file
+        // fs.unlinkSync(outPath);
+        resolve(json);
+      } catch (e) {
+        reject(e);
+      }
+    });
+  })

@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "test": "RBC",
+      "value": 5.3,
+      "ref_lower": 3.5,
+      "ref_upper": 5.5
+    },
+    {
+      "test": "WBC",
+      "value": 7.0,
+      "ref_lower": 4.5,
+      "ref_upper": 11.0
+    },
+    {
+      "test": "Platelets",
+      "value": 369.0,
+      "ref_lower": 150.0,
+      "ref_upper": 400.0
+    },
+    {
+      "test": "Hematocrit",
+      "value": 44.99,
+      "ref_lower": 36.0,
+      "ref_upper": 46.0
+    },
+    {
+      "test": "MCV",
+      "value": 86.14,
+      "ref_lower": 80.0,
+      "ref_upper": 100.0
+    },
+    {
+      "test": "MCH",
+      "value": 33.9,
+      "ref_lower": 27.0,
+      "ref_upper": 32.0
+    },
+    {
+      "test": "MCHC",
+      "value": 33.53,
+      "ref_lower": 32.0,
+      "ref_upper": 36.0
+    },
+    {
+      "test": "Neutrophils",
+      "value": 62.33,
+      "ref_lower": 40.0,
+      "ref_upper": 70.0
+    },
+    {
+      "test": "Lymphocytes",
+      "value": 36.1,
+      "ref_lower": 20.0,
+      "ref_upper": 40.0
+    },
+    {
+      "test": "Fasting Glucose",
+      "value": 81.61,
+      "ref_lower": 70.0,
+      "ref_upper": 99.0
+    },
+    {
+      "test": "Urea",
+      "value": 11.94,
+      "ref_lower": 7.0,
+      "ref_upper": 20.0
+    },
+    {
+      "test": "Creatinine",
+      "value": 0.81,
+      "ref_lower": 0.59,
+      "ref_upper": 1.04
+    },
+    {
+      "test": "Sodium",
+      "value": 144.16,
+      "ref_lower": 135.0,
+      "ref_upper": 145.0
+    },
+    {
+      "test": "Potassium",
+      "value": 4.4,
+      "ref_lower": 3.5,
+      "ref_upper": 5.1
+    },
+    {
+      "test": "ALT",
+      "value": 34.92,
+      "ref_lower": 7.0,
+      "ref_upper": 56.0
+    },
+    {
+      "test": "AST",
+      "value": 30.28,
+      "ref_lower": 10.0,
+      "ref_upper": 40.0
+    }
+  ]
+}

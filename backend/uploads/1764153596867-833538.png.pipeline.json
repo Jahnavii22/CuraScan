@@ -1,0 +1,189 @@
+{
+  "sex": "Male",
+  "tests": [
+    {
+      "name": "MCHC",
+      "value": 42.86,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 32,
+      "reference_upper": 36,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "WBC",
+      "value": 10.96,
+      "unit": "10^3/uL",
+      "status": "normal",
+      "reference_lower": 4,
+      "reference_upper": 11,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "MCV",
+      "value": 89.77,
+      "unit": "fL",
+      "status": "normal",
+      "reference_lower": 80,
+      "reference_upper": 100,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Urea",
+      "value": 32.21,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 7,
+      "reference_upper": 20,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Creatinine",
+      "value": 0.75,
+      "unit": "mg/dL",
+      "status": "normal",
+      "reference_lower": 0.7,
+      "reference_upper": 1.3,
+      "specialist": "Nephrologist",
+      "advice": [
+        "Check kidney function, stay hydrated."
+      ]
+    },
+    {
+      "name": "Cholesterol Total",
+      "value": 139.45,
+      "unit": "mg/dL",
+      "status": "no_reference",
+      "reference_lower": null,
+      "reference_upper": null,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hemoglobin",
+      "value": 19.81,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 13,
+      "reference_upper": 17,
+      "specialist": "Physician",
+      "advice": [
+        "Increase iron intake if low."
+      ]
+    },
+    {
+      "name": "LDL",
+      "value": 109.23,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 0,
+      "reference_upper": 100,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hematocrit",
+      "value": 38.07,
+      "unit": "%",
+      "status": "low",
+      "reference_lower": 40,
+      "reference_upper": 54,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Triglycerides",
+      "value": 30.4,
+      "unit": "mg/dL",
+      "status": "normal",
+      "reference_lower": 0,
+      "reference_upper": 150,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "name": "MCHC",
+      "value": 42.86,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 32,
+      "reference_upper": 36,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Urea",
+      "value": 32.21,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 7,
+      "reference_upper": 20,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hemoglobin",
+      "value": 19.81,
+      "unit": "g/dL",
+      "status": "high",
+      "reference_lower": 13,
+      "reference_upper": 17,
+      "specialist": "Physician",
+      "advice": [
+        "Increase iron intake if low."
+      ]
+    },
+    {
+      "name": "LDL",
+      "value": 109.23,
+      "unit": "mg/dL",
+      "status": "high",
+      "reference_lower": 0,
+      "reference_upper": 100,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    },
+    {
+      "name": "Hematocrit",
+      "value": 38.07,
+      "unit": "%",
+      "status": "low",
+      "reference_lower": 40,
+      "reference_upper": 54,
+      "specialist": "General Physician",
+      "advice": [
+        "Consult your doctor for review."
+      ]
+    }
+  ],
+  "raw_output": "```json\n{\n  \"sex\": \"Male\",\n  \"tests\": [\n    {\n      \"name\": \"MCHC\",\n      \"value\": 42.86,\n      \"unit\": \"g/dL\",\n      \"raw_text\": \"MCHC (g/dL)\"\n    },\n    {\n      \"name\": \"WBC\",\n      \"value\": 10.96,\n      \"unit\": \"10^3/uL\",\n      \"raw_text\": \"WBC (10^3/uL)\"\n    },\n    {\n      \"name\": \"MCV\",\n      \"value\": 89.77,\n      \"unit\": \"fL\",\n      \"raw_text\": \"MCV (fL)\"\n    },\n    {\n      \"name\": \"Urea\",\n      \"value\": 32.21,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Urea (mg/dL)\"\n    },\n    {\n      \"name\": \"Creatinine\",\n      \"value\": 0.75,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Creatinine (mg/dL)\"\n    },\n    {\n      \"name\": \"Cholesterol Total\",\n      \"value\": 139.45,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Cholesterol Total (mg/dL)\"\n    },\n    {\n      \"name\": \"Hemoglobin\",\n      \"value\": 19.81,\n      \"unit\": \"g/dL\",\n      \"raw_text\": \"Hemoglobin (g/dL)\"\n    },\n    {\n      \"name\": \"LDL\",\n      \"value\": 109.23,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"LDL (mg/dL)\"\n    },\n    {\n      \"name\": \"Hematocrit\",\n      \"value\": 38.07,\n      \"unit\": \"%\",\n      \"raw_text\": \"Hematocrit (%)\"\n    },\n    {\n      \"name\": \"Triglycerides\",\n      \"value\": 30.4,\n      \"unit\": \"mg/dL\",\n      \"raw_text\": \"Triglycerides (mg/dL)\"\n    }\n  ],\n  \"notes\": null\n}\n```",
+  "summary": "WARNING: 5 abnormal value(s) detected."
+}

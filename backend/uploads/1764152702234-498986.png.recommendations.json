@@ -1,0 +1,29 @@
+{
+  "overall_risk": "high",
+  "suggestions": [
+    "Consult your physician to discuss the elevated MCH result and potential underlying causes.",
+    "Further investigation may be needed to determine the specific reason for high MCH.",
+    "Discuss the elevated Urea with your doctor for a comprehensive kidney function assessment.",
+    "Ensure adequate hydration by increasing your daily fluid intake.",
+    "Review your current medications and dietary habits with your physician, as they can influence Urea levels.",
+    "Consult your physician to investigate the cause of the low Hematocrit and potential anemia.",
+    "Additional tests, such as a complete iron panel, may be recommended to understand the low Hematocrit."
+  ],
+  "specialist_referrals": [
+    {
+      "test": "MCH",
+      "specialist": "Hematologist",
+      "urgency": "moderate"
+    },
+    {
+      "test": "Hematocrit",
+      "specialist": "Hematologist",
+      "urgency": "moderate"
+    },
+    {
+      "test": "Urea",
+      "specialist": "Nephrologist",
+      "urgency": "moderate"
+    }
+  ]
+}
